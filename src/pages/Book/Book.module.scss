@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+
+.wrapper {
+  padding-top: 64px;
+}
+
+.mainBlock {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px;
+
+  @media screen and (max-width: $desktopBP) {
+    flex-direction: column-reverse;
+    margin: auto;
+    width: fit-content;
+    padding-bottom: 50px;
+  }
+}
+
+.crumb {
+  margin-bottom: 32px;
+
+  @media screen and (max-width: $desktopBP) {
+    margin-left: 40px;
+  }
+}
+
+.previewWrapper {
+  width: 604px;
+  height: 800px;
+  background: $substrate-background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: $desktopBP) {
+    width: auto;
+  }
+}
+
+.error {
+  margin: 70px auto 0 auto;
+  text-align: center;
+  width: fit-content;
+}

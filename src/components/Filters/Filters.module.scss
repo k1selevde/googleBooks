@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: fit-content;
+
+  @media screen and (max-width: $desktopBP) {
+    margin: 0 40px 0 40px;
+  }
+
+  @media screen and (max-width: $tabletBP) {
+    width: min-content;
+    margin: auto;
+  }
+}
+
+.fieldsWrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.searchButton {
+  align-self: flex-end;
+  color: white;
+  width: 298px;
+  height: 36px;
+}

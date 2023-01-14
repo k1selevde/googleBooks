@@ -1,0 +1,45 @@
+@import '../../../../styles/mixins';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 588px;
+}
+
+.tags {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  font-size: 12px;
+}
+
+.title {
+  color: #0D0D0D;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.authors {
+  color: #69737B;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.description {
+  padding-top: 16px;
+}
+
+.descriptionTitle {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.descriptionText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  @include truncateByLineCount(25)
+}

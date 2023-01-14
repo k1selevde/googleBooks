@@ -1,0 +1,7 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.wrapper {
+  color: $primary-color;
+  @include truncateByLineCount(1);
+}

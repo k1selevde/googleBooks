@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+
+.wrapper {
+  padding-bottom: 40px;
+}
+
+.list {
+  margin: 0 auto 16px auto;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 16px;
+  column-gap: 16px;
+
+  @media screen and (max-width: $desktopBP) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media screen and (max-width: $laptopBP) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: $tabletBP) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.total {
+  color: #69737B;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  user-select: none;
+}
+
+.showMore {
+  width: 100%;
+  height: 30px;
+}

@@ -1,0 +1,11 @@
+@import '../../../styles/variables';
+
+.wrapper {
+  display: flex;
+  gap: 5px;
+  color: $primary-color;
+  width: fit-content;
+  cursor: pointer;
+  height: 24px;
+  line-height: 24px;
+}

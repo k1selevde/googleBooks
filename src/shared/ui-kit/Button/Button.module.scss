@@ -1,0 +1,23 @@
+@import '../../../styles/variables';
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 6px 16px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.primary {
+  background: $primary-color;
+  color: white;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid #C2C4C6;
+  color: #0D0D0D;
+}

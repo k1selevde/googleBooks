@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 60px auto 0 auto;
+}
+
+.link {
+  text-decoration: none;
+  color: $primary-color;
+  font-size: 20px;
+}

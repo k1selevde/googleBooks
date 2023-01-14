@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.wrapper {
+  background: $substrate-background-color;
+  padding: 16px;
+  height: 332px;
+  width: 298px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.previewBlock {
+  align-self: center;
+}
+
+.tag {
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.caption {
+  color: #0D0D0D;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  @include truncateByLineCount(2);
+}
+
+.authors {
+  color: #69737B;
+  font-size: 12px;
+  line-height: 20px;
+  @include truncateByLineCount(1);
+}
+
+.link {
+  text-decoration: none;
+  width: fit-content;
+}
