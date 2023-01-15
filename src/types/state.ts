@@ -1,3 +1,5 @@
+import {BookFiltersType} from "../pages/Main/components/BookCatalog/types";
+
 export type BookCatalogItemType = {
 	id: string,
 	title?: string,
@@ -13,7 +15,8 @@ export type BookCatalogStateType = {
 	updating: boolean,
 	error: boolean,
 	moreAvailable: boolean,
-	done: boolean
+	done: boolean,
+	filters: Partial<BookFiltersType>
 }
 
 export type BookPageStateType = {

@@ -8,7 +8,8 @@ const initialState = {
 	loading: false,
 	updating: false,
 	error: false,
-	moreAvailable: false
+	moreAvailable: false,
+	filters: {}
 };
 
 const reducer = (state: BookCatalogStateType = initialState, action: any): BookCatalogStateType => {
@@ -56,6 +57,11 @@ const reducer = (state: BookCatalogStateType = initialState, action: any): BookC
 			case 'GET_BOOKS_MORE_ERROR': {
 				draft.error = false;
 				draft.updating = false;
+				break;
+			}
+
+			case 'SAVE_FILTERS': {
+				draft.filters = action.data;
 				break;
 			}
 

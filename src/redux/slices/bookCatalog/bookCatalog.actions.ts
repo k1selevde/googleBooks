@@ -3,6 +3,7 @@ import * as bookApi from '../../../services/api';
 import {CERTAIN_FIELDS, GET_BOOKS_SORTING_FIELDS, GetBookResponseType} from "types/api";
 import {BookCatalogItemType} from "types/state";
 import {AppDispatchType} from "redux/store";
+import {BookFiltersType} from "pages/Main/components/BookCatalog/types";
 
 const mapRestBooksToState = (items: GetBookResponseType[]): BookCatalogItemType[] => {
 	return items.map(i => {
@@ -14,6 +15,13 @@ const mapRestBooksToState = (items: GetBookResponseType[]): BookCatalogItemType[
 			previewLink: i.volumeInfo.imageLinks?.smallThumbnail
 		}
 	});
+}
+
+export const saveFiltersAC = (data: BookFiltersType) => {
+	return {
+		type: 'SAVE_FILTERS',
+		data
+	}
 }
 
 export const loadBooks = (query: string, category: string, sorting: GET_BOOKS_SORTING_FIELDS, offset: number, size: number) => {
@@ -46,6 +54,8 @@ export const loadBooks = (query: string, category: string, sorting: GET_BOOKS_SO
 
 			const data = {items: mapRestBooksToState(items || []), moreAvailable, totalItems};
 			dispatch({type: successType, data});
+
+			dispatch(saveFiltersAC({query, category, sorting}))
 		} catch (err) {
 			dispatch({type: 'GET_BOOKS_ERROR'})
 		}

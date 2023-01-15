@@ -25,14 +25,15 @@ const BookCatalog = () => {
 		moreAvailable,
 		updating,
 		totalItems,
+		filters: stateFilters,
 		done
 	} = useAppSelector(state => state.bookCatalog);
 
 	const dispatch = useAppDispatch();
 
-	const [query, setQuery] = useState('');
-	const [category, setCategory] = useState<CategoryOptionType['value']>(сategoryOptions[0].value);
-	const [sorting, setSorting] = useState<SortingOptionType['value']>(sortingOptions[0].value);
+	const [query, setQuery] = useState<string>(stateFilters.query || '');
+	const [category, setCategory] = useState<CategoryOptionType['value']>(stateFilters.category || сategoryOptions[0].value);
+	const [sorting, setSorting] = useState<SortingOptionType['value']>(stateFilters.sorting || sortingOptions[0].value);
 
 	const getFiltersHash = () => `${query}-${category}-${sorting}`;
 	const [filtersHash, setFiltersHash] = useState<string>(getFiltersHash());
@@ -51,7 +52,7 @@ const BookCatalog = () => {
 	useEventListener('keypress', handleKeyPress);
 
 	const queryField = (<Field label={'Название книги'}>
-		<Input onChange={(value) => setQuery(value)} name={'query'}/>
+		<Input onChange={(value) => setQuery(value)} name={'query'} value={query} />
 	</Field>)
 
 	const categoryField = (
@@ -76,7 +77,7 @@ const BookCatalog = () => {
 		</Field>
 	)
 
-	const filters = <Filters fields={[queryField, categoryField, sortingField]} onSearch={getBooks(0)}/>;
+	const filtersBlock = <Filters fields={[queryField, categoryField, sortingField]} onSearch={getBooks(0)}/>;
 	const separator = <DividerLine/>;
 
 	const renderCard = (item: BookCatalogItemType) => <BookCard {...item} />;
@@ -101,7 +102,7 @@ const BookCatalog = () => {
 
 	return (
 		<div className={styles.wrapper}>
-			{filters}
+			{filtersBlock}
 			{separator}
 			{renderCards()}
 		</div>
